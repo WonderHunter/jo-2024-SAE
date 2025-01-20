@@ -1,0 +1,555 @@
+@font-face {
+  font-family: "RobotoFlex";
+  src: url(/assets/fonts/RobotoFlex.ttf);
+  font-display: swap;
+}
+
+* {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("/assets/images/background.jpg");
+  /* backdrop-filter: blur(5px); */
+  background-size: cover;
+  overflow-x: hidden;
+  font-family: "RobotoFlex";
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+.login-container {
+  background: #26272b;
+
+  align-items: center;
+  opacity: 1;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  text-align: center;
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-block: 5em;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container img {
+  width: 146px;
+  margin-bottom: 1rem;
+}
+
+.login-container h2 {
+  font-weight: 700;
+  color: white;
+}
+
+.login-container p {
+  margin-bottom: 1.5rem;
+  color: #8e8c8c;
+  size: 10px;
+}
+
+h2.login-title {
+  font-family: "RobotoFlex";
+}
+
+p.login-subtitle {
+  font-family: "RobotoFlex";
+  padding-left: 0;
+}
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #b1aeae;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #121216;
+  border-radius: 5px;
+  background-color: #34353a;
+  color: #fffe;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group input:not(:placeholder-shown) {
+  border-color: #007bff;
+}
+
+.no-account {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background-color: #f4b400;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+}
+button.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background-color: #f4b400;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+}
+button:hover {
+  background-color: #f4a400;
+}
+
+.sign-up {
+  margin-top: 1rem;
+  color: #666;
+}
+
+.sign-up a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.sign-up a:hover {
+  text-decoration: underline;
+}
+
+/* Styles généraux*/
+
+h1 {
+  color: white;
+  font-size: 2rem;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  text-transform: uppercase;
+  font-family: "RobotoFlex";
+}
+
+h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-family: "RobotoFlex";
+}
+
+h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  text-transform: uppercase;
+  font-family: "RobotoFlex";
+}
+
+p.text {
+  color: white;
+  font-size: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: "RobotoFlex";
+}
+
+a.text {
+  color: white;
+  font-size: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: "RobotoFlex";
+}
+
+tr {
+  color: white;
+  font-size: 1rem;
+  padding-left: 2rem;
+  font-family: "RobotoFlex";
+}
+
+th {
+  color: white;
+  font-size: 1rem;
+  padding-left: 2rem;
+  font-family: "RobotoFlex";
+}
+td {
+  color: white;
+  font-size: 1rem;
+  padding-left: 2rem;
+  font-family: "RobotoFlex";
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.searchbar input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #121216;
+  border-radius: 5px;
+  background-color: #34353a;
+  color: #fffe;
+  transition: all 0.3s ease;
+}
+.searchbar input:focus,
+.searchbar input:not(:placeholder-shown) {
+  border-color: #007bff;
+}
+.searchbar button {
+  padding: 0.5rem;
+  border: none;
+  background-color: #f4b400;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  width: 17rem;
+  margin-left: 0.25rem;
+}
+.searchbar button:hover {
+  background-color: #f4a400;
+}
+
+.form-group button {
+  padding: 0.5rem;
+  border: none;
+  background-color: #f4b400;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  width: 17rem;
+  margin-left: 0.25rem;
+}
+.form-group button:hover {
+  background-color: #f4a400;
+}
+
+.adm-users-container {
+  background: #26272b;
+  align-items: center;
+  opacity: 1;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  text-align: center;
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-block: 1em;
+}
+
+.event-container {
+  background: #26272b;
+  align-items: center;
+  opacity: 1;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  text-align: center;
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-block: 5em;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+/* Masquer les cases à cocher d'origine */
+input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+/* Styliser les labels */
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+/* Ajouter un élément personnalisé avant le label */
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #555;
+  border-radius: 4px;
+}
+
+/* Changement de l'apparence lorsque la case est cochée */
+input[type="checkbox"]:checked + label::before {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Ajout d'un indicateur visuel pour la case cochée */
+input[type="checkbox"]:checked + label::after {
+  content: "✓";
+  position: absolute;
+  left: 3px;
+  top: -3px;
+  font-size: 17px;
+  color: white;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #121216;
+  border-radius: 5px;
+  background-color: #34353a;
+  color: #fffe;
+  transition: all 0.3s ease;
+  appearance: none; /* Pour supprimer le style par défaut */
+  -webkit-appearance: none; /* Pour Safari */
+  -moz-appearance: none; /* Pour Firefox */
+  background-image: url("https://cdn-icons-png.flaticon.com/16/8442/8442683.png");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5rem;
+}
+
+.not-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.form-group select option {
+  background-color: #34353a;
+  color: #fffe;
+}
+
+.event-container img {
+  width: 146px;
+  margin-bottom: 1rem;
+}
+
+.event-container h2 {
+  font-weight: 700;
+  color: white;
+}
+
+.event-container p {
+  margin-bottom: 1.5rem;
+  color: #8e8c8c;
+  size: 10px;
+}
+
+h2.event-title {
+  font-family: "RobotoFlex";
+}
+
+p.event-subtitle {
+  font-family: "RobotoFlex";
+  padding-left: 0;
+}
+
+button.new-event {
+  width: 25%;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+  border: none;
+  background-color: #f4b400;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+button.new-event:hover {
+  background-color: #f4a400;
+}
+
+.events-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.event-card {
+  background: #26272b;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: calc(50% - 1rem);
+  max-width: 400px;
+  margin: 0 auto 1rem;
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.event-card h3 {
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.event-card p {
+  color: #8e8c8c;
+  margin-bottom: 1rem;
+}
+
+.event-card .event-date {
+  font-family: "RobotoFlex";
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.event-card .event-location {
+  font-family: "RobotoFlex";
+  color: #8e8c8c;
+}
+
+.events-flex-container {
+  background: #26272b; /* Dark background for contrast */
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 75%;
+  margin: 2rem auto; /* Center the element horizontally */
+  color: #ffffff; /* Ensure text is readable on dark background */
+  overflow: hidden; /* Ensures no spillover from the inner table */
+}
+
+.event-table {
+  width: 100%; /* Full width of its container */
+  border-collapse: collapse; /* Collapse borders */
+  table-layout: fixed; /* Fixed layout for consistent column sizing */
+  font-size: 0.9em;
+  min-width: 400px;
+}
+
+.event-table thead th {
+  background-color: #34353a; /* Dark background for contrast */
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
+.event-table th,
+.event-table td {
+  padding: 12px 15px;
+}
+
+.event-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.event-table tbody tr:nth-of-type(even) {
+  background-color: #242427; /* Dark background for contrast */
+}
+
+.event-table tbody tr:last-of-type {
+  border-bottom: 2px solid #26272b; /* Dark background for contrast */
+}
+
+.scrollable {
+  height: 600px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-by {
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.order-by label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #b1aeae;
+  padding-right: 11%;
+}
+
+.order-by select {
+  width: 15%;
+  padding: 0.5rem;
+  border: 1px solid #121216;
+  border-radius: 5px;
+  background-color: #34353a;
+  color: #fffe;
+  transition: all 0.3s ease;
+  appearance: none; /* Pour supprimer le style par défaut */
+  -webkit-appearance: none; /* Pour Safari */
+  -moz-appearance: none; /* Pour Firefox */
+  background-image: url("https://cdn-icons-png.flaticon.com/16/8442/8442683.png"); /* Ajoutez votre icône personnalisée */
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center; /* Ajustez selon la taille de votre padding */
+  background-size: 1.5rem; /* Ajustez selon la taille souhaitée pour l'icône */
+}
